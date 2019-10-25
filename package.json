@@ -1,0 +1,34 @@
+{
+  "name": "wordbook",
+  "version": "0.0.1",
+  "description": "This is API Solo Project.",
+  "main": "index.js",
+  // "scripts": {
+    // "test": "node tests/initialize.js && mocha tests/test.js && yarn lint",
+    // "lint": "eslint --fix .",
+    // "start": "node index.js",
+    // "migrate": "knex migrate:latest --knexfile models/knexfile.js",
+    // "rollback": "knex migrate:rollback --knexfile models/knexfile.js ",
+    // "precommit": "pretty-quick --staged"
+  // },
+  "repository": "https://github.com/nouvelle/wordbook.git",
+  "author": "eriko",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.19.5",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "pg": "^7.12.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-config-problems": "^3.0.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "mocha": "^6.2.2",
+    "prettier": "^1.18.2"
+  }
+}
