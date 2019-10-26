@@ -4,6 +4,7 @@ const validateEnglish = eng =>
 
 module.exports = (knex, List) => {
   return params => {
+    console.log(params);
     const eng = params.english;
     const ja = params.japanese;
     const sentence = params.sentence;
