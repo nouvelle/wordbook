@@ -3,20 +3,20 @@
   "version": "0.0.1",
   "description": "This is API Solo Project.",
   "main": "index.js",
-  // "scripts": {
-    // "test": "node tests/initialize.js && mocha tests/test.js && yarn lint",
-    // "lint": "eslint --fix .",
-    // "start": "node index.js",
-    // "migrate": "knex migrate:latest --knexfile models/knexfile.js",
-    // "rollback": "knex migrate:rollback --knexfile models/knexfile.js ",
-    // "precommit": "pretty-quick --staged"
-  // },
+  "scripts": {
+    "test": "node tests/initialize.js && mocha tests/test.js && yarn lint",
+    "lint": "eslint --fix .",
+    "start": "node index.js",
+    "migrate": "knex migrate:latest --knexfile models/knexfile.js",
+    "rollback": "knex migrate:rollback --knexfile models/knexfile.js "
+  },
   "repository": "https://github.com/nouvelle/wordbook.git",
   "author": "eriko",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
     "knex": "^0.19.5",
     "moment": "^2.24.0",
     "morgan": "^1.9.1",

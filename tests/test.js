@@ -21,26 +21,6 @@ describe("voca", () => {
         .catch(() => assert.fail("voca table is not found.")));
   });
 
-  // describe.skip("#list", () => {
-  //   const vocaEng = ["hello", "goobye"];
-  //   const users = usernames.map(username => ({ username }));
-  //   before(() => Promise.all(users.map(models.users.create)));
-  //   after(() => knex("users").del());
-
-  //   it("lists all vocabulary", () =>
-  //     models.users.list().then(resp => {
-  //       expect(usernames).to.include(resp[0].username);
-  //       expect(usernames).to.include(resp[1].username);
-  //     }));
-
-  //   // it("returns serializable objects", () =>
-  //   //   models.users.list().then(resp => {
-  //   //     expect(resp[0].serialize).to.be.a("function");
-  //   //     expect(resp[0].serialize().id).to.be.a("number");
-  //   //     expect(resp[0].serialize().username).to.be.a("string");
-  //   //   }));
-  // });
-
   describe.skip("#create", () => {
     let params = { username: "" };
 
@@ -85,5 +65,22 @@ describe("voca", () => {
             ));
       });
     });
+  });
+  describe.skip("#list", () => {
+    // const vocaEng = ["hello", "goobye"];
+    // const users = usernames.map(username => ({ username }));
+    // before(() => Promise.all(users.map(models.users.create)));
+    // after(() => knex("users").del());
+    // it("lists all vocabulary", () =>
+    //   models.users.list().then(resp => {
+    //     expect(usernames).to.include(resp[0].username);
+    //     expect(usernames).to.include(resp[1].username);
+    //   }));
+    // it("returns serializable objects", () =>
+    //   models.users.list().then(resp => {
+    //     expect(resp[0].serialize).to.be.a("function");
+    //     expect(resp[0].serialize().id).to.be.a("number");
+    //     expect(resp[0].serialize().username).to.be.a("string");
+    //   }));
   });
 });
