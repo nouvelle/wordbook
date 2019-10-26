@@ -25,14 +25,9 @@ module.exports = (knex, List) => {
       })
       .then(() => {
         return knex("voca")
-          .where({
-            english: eng,
-            japanese: ja,
-            sentence: sentence,
-            memo: memo
-          })
+          .where({ english: eng })
           .select()
-          .then(voca => new List(voca[0]));
+          .then(voca => new List(voca.pop()));
       })
       .catch(err => {
         // sanitize known errors

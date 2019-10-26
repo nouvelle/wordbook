@@ -45,7 +45,7 @@ module.exports = models => {
         sentence: req.body.sentence,
         memo: req.body.memo
       })
-      .then(voca => res.status(204).json(voca.serialize()))
+      .then(voca => res.status(204).json(voca))
       .catch(err => res.status(400).send(err.message));
   };
   /**
