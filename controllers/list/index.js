@@ -31,12 +31,19 @@ module.exports = models => {
       .then(voca => res.status(200).json(voca))
       .catch(err => res.status(400).send(err.message));
 
+  const deleteVoca = (req, res) =>
+    models.list
+      .delete({ english: req.body.english })
+      .then(voca => res.status(200).json(voca))
+      .catch(err => res.status(400).send(err.message));
+
   /**
    * Routes
    */
   const router = express.Router();
   router.post("/", createVoca);
   router.get("/", listVoca);
+  router.delete("/", deleteVoca);
   // router.get("/:eng/", getVoca);
   // router.post("/:id/messages", createUserMessage);
 

@@ -27,6 +27,7 @@ module.exports = knex => {
   return {
     create: require("./create")(knex, List),
     list: require("./list")(knex, List),
-    get: require("./get")(knex, List)
+    get: require("./get")(knex, List),
+    delete: require("./delete")(knex, List)
   };
 };
