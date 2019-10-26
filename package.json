@@ -7,6 +7,7 @@
     "test": "node tests/initialize.js && mocha tests/test.js && yarn lint",
     "lint": "eslint --fix .",
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "migrate": "knex migrate:latest --knexfile models/knexfile.js",
     "rollback": "knex migrate:rollback --knexfile models/knexfile.js "
   },
@@ -29,6 +30,7 @@
     "eslint-config-problems": "^3.0.1",
     "eslint-plugin-prettier": "^3.1.1",
     "mocha": "^6.2.2",
+    "nodemon": "^1.19.4",
     "prettier": "^1.18.2"
   }
 }

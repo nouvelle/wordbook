@@ -25,8 +25,8 @@ List.prototype.serialize = function() {
 
 module.exports = knex => {
   return {
-    // create: require("./create")(knex, List),
-    list: require("./list")(knex, List)
-    // get: require("./get")(knex, List)
+    create: require("./create")(knex, List),
+    list: require("./list")(knex, List),
+    get: require("./get")(knex, List)
   };
 };

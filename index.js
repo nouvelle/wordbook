@@ -1,7 +1,8 @@
 const config = require("./config");
 const services = require("./services")(config);
 
-const models = require("./models");
+const knex = require("knex")(config.db);
+const models = require("./models")(knex);
 
 const apiRouter = require("./controllers")(models);
 
