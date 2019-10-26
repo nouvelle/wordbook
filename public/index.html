@@ -3,20 +3,73 @@
   <head>
     <meta charset="utf-8" />
     <title>Word Book</title>
+    <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
   </head>
 
   <body>
-    <h1>Hi</h1>
-    <input type="button" id="test" value="get" onclick="getList()" />
-    <input type="button" id="test" value="post" onclick="postList()" />
-    <input type="button" id="test" value="delete" onclick="deleteList()" />
-    <input type="button" id="test" value="patch" onclick="patchList()" />
+    <h1>Your Word Book</h1>
+    <div>
+      <input type="button" id="get" value="get" onclick="getList()" />
+      <input type="button" id="post" value="post" onclick="postList()" />
+      <input type="button" id="delete" value="delete" onclick="deleteList()" />
+      <input type="button" id="patch" value="patch" onclick="patchList()" />
+    </div>
+    <div>
+      English :<input
+        type="text"
+        id="enIn"
+        minlength="1"
+        maxlength="30"
+        size="10"
+        value="banana"
+      />
+    </div>
+    <div>
+      Japanes :<input
+        type="text"
+        id="jaIn"
+        minlength="1"
+        maxlength="30"
+        size="10"
+        value="バナナ"
+      />
+    </div>
+    <div>
+      Sentence :<input
+        type="text"
+        id="seIn"
+        minlength="1"
+        maxlength="300"
+        size="10"
+        value="I eat an banana."
+      />
+    </div>
+    <div>
+      Memo :<input
+        type="text"
+        id="meIn"
+        minlength="1"
+        maxlength="500"
+        size="10"
+        value="memo"
+      />
+    </div>
+    <div id="wrap">
+      <table>
+        <tbody id="tbody">
+          <tr>
+            <th class="no">No</th>
+            <th class="en">English</th>
+            <th class="ja">Japanese</th>
+            <th class="sen">Sentence</th>
+            <th class="memo">memo</th>
+            <th class="date">date</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <!-- Modules -->
     <script src="js/app.js"></script>

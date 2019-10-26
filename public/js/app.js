@@ -1,24 +1,77 @@
 (() => {
   const getList = () => {
     const url = "http://localhost:3000/api/list";
-    return fetch(url)
+    let getData = "";
+    fetch(url)
       .then(resp => resp.json())
-      .then(json => {
-        console.log(json);
-        return json;
+      .then(data => {
+        console.log(data);
+        const tbody = document.getElementById("tbody");
+        // while (tbody) {
+        //   if (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+        // }
+        // build DOM
+        const thtr = document.createElement("tr");
+        const thId = document.createElement("th");
+        const thEn = document.createElement("th");
+        const thJa = document.createElement("th");
+        const thSe = document.createElement("th");
+        const thMe = document.createElement("th");
+        const thAt = document.createElement("th");
+        thId.textContent = "No";
+        thEn.textContent = "English";
+        thJa.textContent = "Japanese";
+        thSe.textContent = "Sentence";
+        thMe.textContent = "Memo";
+        thAt.textContent = "Date";
+        thtr.appendChild(thId);
+        thtr.appendChild(thEn);
+        thtr.appendChild(thJa);
+        thtr.appendChild(thSe);
+        thtr.appendChild(thMe);
+        thtr.appendChild(thAt);
+        tbody.appendChild(thtr);
+        data.forEach(data => {
+          const tdtr = document.createElement("tr");
+          const tdId = document.createElement("td");
+          const tdEn = document.createElement("td");
+          const tdJa = document.createElement("td");
+          const tdSe = document.createElement("td");
+          const tdMe = document.createElement("td");
+          const tdAt = document.createElement("td");
+          tdId.textContent = data.id;
+          tdEn.textContent = data.english;
+          tdJa.textContent = data.japanese;
+          tdSe.textContent = data.sentence;
+          tdMe.textContent = data.memo;
+          tdAt.textContent = data.createdAt;
+          tdtr.appendChild(tdId);
+          tdtr.appendChild(tdEn);
+          tdtr.appendChild(tdJa);
+          tdtr.appendChild(tdSe);
+          tdtr.appendChild(tdMe);
+          tdtr.appendChild(tdAt);
+          tbody.appendChild(tdtr);
+        });
+        return data;
       })
-      .catch(err => new Error(err));
+      // .catch(err => new Error(err));
+      .catch(err => console.log(err));
   };
 
   const postList = () => {
+    const en = document.getElementById("enIn").value;
+    const ja = document.getElementById("jaIn").value;
+    const se = document.getElementById("seIn").value;
+    const me = document.getElementById("meIn").value;
     const url = "http://localhost:3000/api/list";
     return fetch(url, {
       method: "POST",
       body: JSON.stringify({
-        english: "apple",
-        japanese: "りんご",
-        sentence: "I eat an apple.",
-        memo: "appleappleapple"
+        english: en,
+        japanese: ja,
+        sentence: se,
+        memo: me
       }),
       headers: {
         "Content-Type": "application/json"
@@ -68,112 +121,3 @@
   window.deleteList = deleteList;
   window.patchList = patchList;
 })();
-
-// let vocamanager = new Vocamanager();
-// vocamanager.getList().then(resp => {
-//   console.log(resp);
-// });
-
-/* global app, $ */
-/*
-app.controller("MessagesController", [
-  "$scope",
-  "$http",
-  function($scope, $http) {
-    $scope.user = {};
-    $scope.users = [];
-    $scope.channels = [];
-    $scope.messageTarget = null;
-    $scope.currentChannel = null;
-    $scope.currentUser = null;
-    $scope.usernameRecieved = false;
-    $scope.currentMessages = [];
-
-    const getUsers = function() {
-      $http.get("http://localhost:3000/api/users").then(response => {
-        $scope.users = response.data;
-      });
-    };
-
-    const getChannels = function() {
-      $http.get("http://localhost:3000/api/channels").then(response => {
-        $scope.channels = response.data;
-      });
-    };
-
-    $scope.signIn = function(e) {
-      //post the new user and then get all the existing users and channels
-      const postData = { username: $("#username-input")[0].value };
-      $http({
-        method: "POST",
-        url: "http://localhost:3000/api/users",
-        data: postData,
-        headers: { "Content-Type": "application/json" }
-      }).then(response => {
-        $scope.usernameRecieved = true;
-        $scope.user = response.data;
-        getUsers();
-        getChannels();
-      });
-    };
-
-    $scope.refreshUsers = () => getUsers();
-    $scope.refreshChannels = () => getChannels();
-
-    $scope.sendMessage = function() {
-      //post message to server and refresh the messages displayed
-      if ($scope.messageTarget === "user") {
-        const postData = {
-          fromId: $scope.user.id,
-          message: $("#messageArea")[0].value
-        };
-        $http({
-          method: "POST",
-          url: `http://localhost:3000/api/users/${$scope.currentUser.id}/messages`,
-          data: postData,
-          headers: { "Content-Type": "application/json" }
-        }).then(response => {
-          $scope.currentMessages = response.data;
-          $("#messageArea")[0].value = "";
-        });
-      } else if ($scope.messageTarget === "channel") {
-        const postData = {
-          fromId: $scope.user.id,
-          message: $("#messageArea")[0].value
-        };
-        $http({
-          method: "POST",
-          url: `http://localhost:3000/api/channels/${$scope.currentChannel.id}/messages`,
-          data: postData,
-          headers: { "Content-Type": "application/json" }
-        }).then(response => {
-          $scope.currentMessages = response.data;
-          $("#messageArea")[0].value = "";
-        });
-      }
-    };
-
-    $scope.getUser = function(userIndex) {
-      $scope.messageTarget = "user";
-      $scope.currentUser = $scope.users[userIndex];
-      $http
-        .get(
-          `http://localhost:3000/api/users/${$scope.currentUser.id}/messages?fromId=${$scope.user.id}`
-        )
-        .then(response => {
-          $scope.currentMessages = response.data;
-        });
-    };
-
-    $scope.getChannel = function(channelIndex) {
-      $scope.messageTarget = "channel";
-      $scope.currentChannel = $scope.channels[channelIndex];
-      $http
-        .get(`http://localhost:3000/api/channels/${$scope.currentChannel.id}`)
-        .then(response => {
-          $scope.currentMessages = response.data;
-        });
-    };
-  }
-]);
-*/

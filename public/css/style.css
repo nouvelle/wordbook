@@ -1,0 +1,67 @@
+body {
+  background-color: #f8dce0;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  padding: 20px;
+}
+#title {
+  font-size: 42px;
+  margin: 10px 10px 30px;
+  text-align: center;
+}
+#wrap {
+  width: 100%;
+  margin: 10px auto;
+  background: #f8dce0;
+}
+table {
+  width: 100%;
+}
+th {
+  padding: 10px;
+  background: #fcbac3;
+}
+tr td {
+  padding: 2px 10px;
+  background: #fdf2f3;
+}
+tr:nth-child(2n) td {
+  background: #ffffff;
+}
+td {
+}
+.no {
+}
+.en {
+}
+.ja {
+}
+.sen {
+}
+.memo {
+}
+.date {
+}
+
+#get,
+#post,
+#delete,
+#patch {
+  width: 120px;
+  height: 50px;
+  font-size: 18px;
+}
+input[type="button"] {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #ff93a2; /*ボタン色*/
+  color: #fff;
+  border-bottom: solid 4px #df828f;
+  border-radius: 3px;
+}
+input[type="button"]:active {
+  border: none;
+}
+input[type="button"]:focus {
+  outline: 0;
+}
