@@ -56,6 +56,7 @@ describe("voca", () => {
       });
     });
   });
+
   describe("#list", () => {
     const vocas = [
       {
@@ -83,6 +84,28 @@ describe("voca", () => {
         expect(resp[0].serialize).to.be.a("function");
         expect(resp[0].serialize().id).to.be.a("number");
         expect(resp[0].serialize().english).to.be.a("string");
+      }));
+  });
+
+  describe("#delete", () => {
+    let params = {};
+
+    before(() => {
+      params.english = "japan";
+      params.japanese = "日本";
+      params.sentence = "I live in Japan.";
+      params.memo = "Japan is country.";
+    });
+    afterEach(() => knex("voca").del()); // delete all voca after each spec
+
+    it("exist a words", () => {
+      models.list.create(params).then(voca => {
+        expect(voca).to.include({ english: params.english });
+      });
+    });
+    it("delete a words", () =>
+      models.list.delete(params).then(voca => {
+        expect(voca).to.not.include({ english: params.english });
       }));
   });
 });
