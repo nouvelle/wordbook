@@ -27,19 +27,19 @@ describe("voca", () => {
     context("when good params are given", () => {
       before(() => {
         params.english = "japan";
-        // params.japanese = "日本";
-        // params.sentence = "I live in Japan.";
-        // params.memo = "Japan is country.";
+        params.japanese = "日本";
+        params.sentence = "I live in Japan.";
+        params.memo = "Japan is country.";
       });
 
-      // afterEach(() => knex("voca").del()); // delete all voca after each spec
+      afterEach(() => knex("voca").del()); // delete all voca after each spec
 
       it("creates a words", () =>
         models.list.create(params).then(voca => {
           expect(voca).to.include({ english: params.english });
-          // expect(voca).to.include({ japanese: params.japanese });
-          // expect(voca).to.include({ sentence: params.sentence });
-          // expect(voca).to.include({ memo: params.memo });
+          expect(voca).to.include({ japanese: params.japanese });
+          expect(voca).to.include({ sentence: params.sentence });
+          expect(voca).to.include({ memo: params.memo });
           expect(voca.id).to.be.a("number");
         }));
 
@@ -57,14 +57,26 @@ describe("voca", () => {
     });
   });
   describe("#list", () => {
-    const vocaEng = ["apple_test", "hello_test"];
-    const vocas = vocaEng.map(english => ({ english }));
+    const vocas = [
+      {
+        english: "japan",
+        japanese: "日本",
+        sentence: "I live in Japan.",
+        memo: "Japan is country."
+      },
+      {
+        english: "tokyo",
+        japanese: "東京",
+        sentence: "I live in Tokyo.",
+        memo: "Tokyo is city."
+      }
+    ];
     before(() => Promise.all(vocas.map(models.list.create)));
     after(() => knex("voca").del());
     it("lists all vocabulary", () =>
-      models.list.lust().then(resp => {
-        expect("apple_test").to.include(resp[0].english);
-        expect("hello_test").to.include(resp[1].english);
+      models.list.list().then(resp => {
+        expect("japan").to.include(resp[0].english);
+        expect("tokyo").to.include(resp[1].english);
       }));
     it("returns serializable objects", () =>
       models.list.list().then(resp => {
