@@ -9,7 +9,8 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "migrate": "knex migrate:latest --knexfile models/knexfile.js",
-    "rollback": "knex migrate:rollback --knexfile models/knexfile.js "
+    "rollback": "knex migrate:rollback --knexfile models/knexfile.js ",
+    "seed": "knex seed:run --knexfile models/knexfile.js"
   },
   "repository": "https://github.com/nouvelle/wordbook.git",
   "author": "eriko",

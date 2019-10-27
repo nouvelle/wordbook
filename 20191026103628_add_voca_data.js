@@ -3,7 +3,7 @@ exports.up = function(knex) {
   // create the 'voca' table with six columns
   return knex("voca").insert({
     english: "apple",
-    japanese: "ああ",
+    japanese: "りんご",
     sentence: "I have an apple.",
     memo: "This is memo."
   });
