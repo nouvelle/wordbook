@@ -94,23 +94,27 @@ $ yarn seed
 
 API URL : `http://localhost:3000/api/list`
 
-- GET  
-  To get data
+## GET
+
+To get data
 
 ![get](https://github.com/nouvelle/wordbook/blob/master/images/get.png?raw=true)
 
-- POST  
-  To send data to a server to create a data
+## POST
+
+To send data to a server to create a data
 
 ![post](https://github.com/nouvelle/wordbook/blob/master/images/post.png?raw=true)
 
-- DELET  
-  To delete the specified data
+## DELET
+
+To delete the specified data
 
 ![delete](https://github.com/nouvelle/wordbook/blob/master/images/delete.png?raw=true)
 
-- PATCH
-  To send data to a server to update a data
+## PATCH
+
+To send data to a server to update a data
 
 ![patch](https://github.com/nouvelle/wordbook/blob/master/images/patch.png?raw=true)
 
