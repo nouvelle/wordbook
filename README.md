@@ -1,5 +1,14 @@
 “This was created during my time as a student at Code Chrysalis”
 
+1. [About](#About)
+1. [Environment](#Environment)
+1. [Installation](#Installation)
+1. [Other command](#Other%20command)
+1. [How To Use API](#How%20To%20Use%20API)
+1. [Credits](#Credits)
+1. [Contributing](#Contributing)
+1. [License](#License)
+
 # About
 
 This is a Japanese / English word book app.  
