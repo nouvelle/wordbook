@@ -27,21 +27,17 @@ tr td {
 tr:nth-child(2n) td {
   background: #ffffff;
 }
-td {
+input {
+  padding: 3px;
+  font-size: 1em;
+  color: #666;
+  border: solid 1px #ccc;
+  margin: 0 0 5px;
+  width: 250px;
 }
-.no {
+input:focus {
+  border: solid 1px #ff93a2;
 }
-.en {
-}
-.ja {
-}
-.sen {
-}
-.memo {
-}
-.date {
-}
-
 #get,
 #post,
 #delete,
@@ -62,6 +58,7 @@ input[type="button"] {
 input[type="button"]:active {
   border: none;
 }
-input[type="button"]:focus {
+input[type="button"]:focus,
+input[type="text"]:focus {
   outline: 0;
 }
