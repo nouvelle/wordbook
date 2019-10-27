@@ -6,7 +6,7 @@ module.exports = (knex, List) => {
       .where({ english: eng })
       .select()
       .then(voca => {
-        if (voca.length) return new List(voca.pop());
+        if (voca.length > 0) return new List(voca.pop());
 
         throw new Error(`Error finding word ${eng}`);
       });

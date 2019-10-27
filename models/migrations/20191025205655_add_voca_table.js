@@ -12,15 +12,11 @@ exports.up = function(knex) {
       .index(); // index it
 
     t.string("japanese", 30) // maximum length of 30 characters
-      .unique() // add a unique constraint to this column
-      // .notNullable() // add a not-null constraint to this column
       .index(); // index it
 
     t.string("sentence", 300); // maximum length of 300 characters
-    // .notNullable(); // add a not-null constraint to this column
 
     t.string("memo", 500); // maximum length of 500 characters
-    // .notNullable(); // add a not-null constraint to this column
 
     t.timestamp("created_at")
       .notNullable()

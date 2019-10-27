@@ -15,9 +15,7 @@ module.exports = models => {
       .then(voca => res.status(201).json(voca.serialize()))
       .catch(err => {
         if (err.message === "That english word already exists") {
-          return models.list
-            .get({ english: req.body.english })
-            .then(voca => res.status(200).json(voca.serialize()));
+          return res.status(400).json(err.message);
         }
 
         return res.status(400).send(err.message);

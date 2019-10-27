@@ -13,7 +13,6 @@ module.exports = (knex, List) => {
         new Error("English word must be provided, and be at most 30 characters")
       );
     }
-
     return knex("voca")
       .insert({
         english: eng,
@@ -23,12 +22,7 @@ module.exports = (knex, List) => {
       })
       .then(() => {
         return knex("voca")
-          .where({
-            english: eng,
-            japanese: ja,
-            sentence: sentence,
-            memo: memo
-          })
+          .where({ english: eng })
           .select();
       })
       .then(voca => new List(voca.pop())) // create a list model out of the plain database response

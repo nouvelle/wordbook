@@ -5,12 +5,13 @@
     fetch(url)
       .then(resp => resp.json())
       .then(data => {
-        console.log(data);
-        const tbody = document.getElementById("tbody");
-        // while (tbody) {
-        //   if (tbody.firstChild) tbody.removeChild(tbody.firstChild);
-        // }
+        const rmTbody = document.getElementById("tbody");
+        tbody_parent = rmTbody.parentNode;
+        tbody_parent.removeChild(rmTbody);
         // build DOM
+        const table = document.getElementById("table");
+        const tbody = document.createElement("tbody");
+        tbody.setAttribute("id", "tbody");
         const thtr = document.createElement("tr");
         const thId = document.createElement("th");
         const thEn = document.createElement("th");
@@ -31,6 +32,7 @@
         thtr.appendChild(thMe);
         thtr.appendChild(thAt);
         tbody.appendChild(thtr);
+        table.appendChild(tbody);
         data.forEach(data => {
           const tdtr = document.createElement("tr");
           const tdId = document.createElement("td");
@@ -55,8 +57,7 @@
         });
         return data;
       })
-      // .catch(err => new Error(err));
-      .catch(err => console.log(err));
+      .catch(err => new Error(err));
   };
 
   const postList = () => {
