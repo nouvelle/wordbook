@@ -3,10 +3,8 @@ body {
   font-family: Monaco, Consolas, "Lucida Console", monospace;
   padding: 20px;
 }
-#title {
-  font-size: 42px;
-  margin: 10px 10px 30px;
-  text-align: center;
+h1 {
+  background: linear-gradient(transparent 70%, #fcbac3 70%);
 }
 #wrap {
   width: 100%;
