@@ -1,5 +1,7 @@
 “This was created during my time as a student at Code Chrysalis”
 
+# Word Book 🗒️
+
 1. [About](#About)
 1. [Environment](#Environment)
 1. [Installation](#Installation)
