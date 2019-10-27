@@ -2,12 +2,12 @@
 
 # About
 
-This is a Japanese / English word book app.
+This is a Japanese / English word book app.  
 You can customize your word book to suit your needs.
 
 # Environment
 
-- Postgres
+- Postgres  
   You will need postgres installed. If you haven't installed it already, download and install the PostgresApp and verify its working by running the command psql in your terminal.
 
 Create a database for this project by running:
@@ -32,7 +32,7 @@ $ git clone https://github.com/nouvelle/wordbook.git
 2. Go into the repository
 
 ```bash
-$ cd electron-markdownify
+$ cd wordbook
 ```
 
 3. Install dependencies
@@ -79,12 +79,31 @@ $ yarn test
 $ yarn seed
 ```
 
-# How To Use
+# How To Use API
 
 - GET
+
+```bash
+
+```
+
 - POST
+
+```bash
+
+```
+
 - DELET
+
+```bash
+
+```
+
 - PATCH
+
+```bash
+
+```
 
 # Credits
 
