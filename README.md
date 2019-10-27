@@ -92,7 +92,7 @@ $ yarn seed
 
 # How To Use API
 
-API URL : `http://localhost:3000/api/list`
+API URL : `http://localhost:3000/api/list`  
 Explain URL : `http://localhost:3000/about.html`
 
 ## GET
