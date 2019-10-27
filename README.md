@@ -81,29 +81,27 @@ $ yarn seed
 
 # How To Use API
 
-- GET
+API URL : `http://localhost:3000/api/list`
 
-```bash
+- GET  
+  To get data
 
-```
+![get](https://github.com/nouvelle/wordbook/blob/master/images/get.png?raw=true)
 
-- POST
+- POST  
+  To send data to a server to create a data
 
-```bash
+![post](https://github.com/nouvelle/wordbook/blob/master/images/post.png?raw=true)
 
-```
+- DELET  
+  To delete the specified data
 
-- DELET
-
-```bash
-
-```
+![delete](https://github.com/nouvelle/wordbook/blob/master/images/delete.png?raw=true)
 
 - PATCH
+  To send data to a server to update a data
 
-```bash
-
-```
+![patch](https://github.com/nouvelle/wordbook/blob/master/images/patch.png?raw=true)
 
 # Credits
 
