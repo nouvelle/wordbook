@@ -96,25 +96,25 @@ API URL : `http://localhost:3000/api/list`
 
 ## GET
 
-To get data
+To get your Word Book
 
 ![get](https://github.com/nouvelle/wordbook/blob/master/images/get.png?raw=true)
 
 ## POST
 
-To send data to a server to create a data
+To add your Word Book
 
 ![post](https://github.com/nouvelle/wordbook/blob/master/images/post.png?raw=true)
 
 ## DELET
 
-To delete the specified data
+To delete your Word Book
 
 ![delete](https://github.com/nouvelle/wordbook/blob/master/images/delete.png?raw=true)
 
 ## PATCH
 
-To send data to a server to update a data
+To update your Word Book
 
 ![patch](https://github.com/nouvelle/wordbook/blob/master/images/patch.png?raw=true)
 
