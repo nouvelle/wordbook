@@ -97,25 +97,25 @@ Explain URL : `http://localhost:3000/about.html`
 
 ## GET
 
-To get your Word Book
+To get your data
 
 ![get](https://github.com/nouvelle/wordbook/blob/master/images/get.png?raw=true)
 
 ## POST
 
-To add your Word Book
+To add your data
 
 ![post](https://github.com/nouvelle/wordbook/blob/master/images/post.png?raw=true)
 
 ## DELET
 
-To delete your Word Book
+To delete your data
 
 ![delete](https://github.com/nouvelle/wordbook/blob/master/images/delete.png?raw=true)
 
 ## PATCH
 
-To update your Word Book
+To update your data
 
 ![patch](https://github.com/nouvelle/wordbook/blob/master/images/patch.png?raw=true)
 
@@ -128,9 +128,7 @@ This software uses the following open source packages:
 
 # Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+Pull requests are welcome!! 😊
 
 # License
 
