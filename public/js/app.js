@@ -99,14 +99,18 @@
   };
 
   const patchList = () => {
+    const en = document.getElementById("enIn").value;
+    const ja = document.getElementById("jaIn").value;
+    const se = document.getElementById("seIn").value;
+    const me = document.getElementById("meIn").value;
     const url = "http://localhost:3000/api/list";
     return fetch(url, {
       method: "PATCH",
       body: JSON.stringify({
-        english: "apple",
-        japanese: "りんご!!!",
-        sentence: "I eat an apple!!!.",
-        memo: "appleappleapple!!!!!"
+        english: en,
+        japanese: ja,
+        sentence: se,
+        memo: me
       }),
       headers: {
         "Content-Type": "application/json"
