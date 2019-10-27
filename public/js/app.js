@@ -83,14 +83,12 @@
   };
 
   const deleteList = () => {
+    const en = document.getElementById("enIn").value;
     const url = "http://localhost:3000/api/list";
     return fetch(url, {
       method: "DELETE",
       body: JSON.stringify({
-        english: "apple",
-        japanese: "りんご",
-        sentence: "I eat an apple.",
-        memo: "appleappleapple"
+        english: en
       }),
       headers: {
         "Content-Type": "application/json"
