@@ -62,3 +62,31 @@ input[type="button"]:focus,
 input[type="text"]:focus {
   outline: 0;
 }
+
+/*** Explain.html ***/
+h2 {
+  color: #fd2643;
+  border-bottom: dashed 2px #fd2643;
+}
+.comment {
+  font-size: 14px;
+}
+.code {
+  background: #fefefe;
+  margin: 10px;
+  width: 650px;
+}
+#url .code {
+  width: 1000px;
+}
+pre code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace !important;
+  font-size: 12px;
+  margin: 10px;
+}
+.url {
+  /* background: #f7f7f7; */
+  padding: 10px;
+  width: 650px;
+  font-size: 12px;
+}

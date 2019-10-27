@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Word Book</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <h1>Describes my REST API</h1>
+    <h2>GET method</h2>
+    <div class="comment">To get your Word Book</div>
+    <div class="code">
+      <pre><code>
+  return knex("voca")
+    .select("id", "english", "japanese", "sentence", "memo", "created_at")
+    .then(vocaArray => {
+      const output = [];
+      if(vocaArray.length > 0) vocaArray.forEach(voca => output.push(new List(voca)));
+      return output;
+    });
+      </code></pre>
+    </div>
+
+    <h2>POST method</h2>
+    <div class="comment">To add your Word Book</div>
+    <div class="code">
+      <pre><code>
+  const eng = params.english;
+  const ja = params.japanese;
+  const sentence = params.sentence;
+  const memo = params.memo;
+
+  return knex("voca") 
+    .insert({ english: eng, japanese: ja, sentence:sentence, memo: memo })
+    </code></pre>
+    </div>
+
+    <h2>DELETE method</h2>
+    <div class="comment">To delete the specified data</div>
+    <div class="code">
+      <pre><code>
+  const eng = params.english;
+  
+  return knex("voca")
+    .where("english", eng)
+    .del()
+    </code></pre>
+    </div>
+
+    <h2>PATCH method</h2>
+    <div class="comment">To update a data</div>
+    <div class="code">
+      <pre><code>
+  const eng = params.english;
+  let ja = "";
+  let sentence = "";
+  let memo = "";
+  if (params.japanese) ja = params.japanese;
+  if (params.sentence) sentence = params.sentence;
+  if (params.memo) memo = params.memo;
+
+  return knex("voca")
+    .where("english", "=", eng)
+    .update({ japanese: ja, sentence: sentence, memo: memo })
+    </code></pre>
+    </div>
+  </body>
+</html>

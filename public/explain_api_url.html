@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Word Book</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body id="url">
+    <h1>Describes my REST API</h1>
+    <h2>GET method</h2>
+    <div class="comment">To get your Word Book</div>
+    <div class="url">
+      <div>* Request URL : http://localhost:3000/api/list</div>
+      <div>* Response Data :</div>
+    </div>
+    <div class="code">
+      <pre><code>
+  [
+    {
+      "id": 1,
+      "english": "autonomy",
+      "japanese": "自主・自律・自立",
+      "sentence": "A good boss will provide her workers with the autonomy necessary to create their own ideal working conditions.",
+      "memo": "the capacity of an agent to act in accordance with objective morality rather than under the influence of desires.",
+      "createdAt": "05:06:04"
+    },
+    {
+      "id": 2,
+      "english": "consistent",
+      "japanese": "一貫した",
+      "sentence": "She’s the team’s most consistent player.",
+      "memo": "always behaving in the same way or having the same attitudes, standards etc",
+      "createdAt": "05:06:04"
+    }
+  ]
+      </code></pre>
+    </div>
+
+    <h2>POST method</h2>
+    <div class="comment">To add your Word Book</div>
+    <div class="url">
+      <div>* Request URL : http://localhost:3000/api/list</div>
+      <div>* Body Json Data :</div>
+    </div>
+    <div class="code">
+      <pre><code>
+  {
+    "english": "ensure",
+    "japanese": "確保する",
+    "sentence": "He took daily vitamins to ensure that he would remain healthy",
+    "memo": "to make certain that something will happen properly"
+  }
+    </code></pre>
+    </div>
+    <div class="url">
+      <div>* Response Data :</div>
+    </div>
+    <div class="code">
+      <pre><code>
+  {
+    "id": 4,
+    "english": "ensure",
+    "japanese": "確保する",
+    "sentence": "He took daily vitamins to ensure that he would remain healthy",
+    "memo": "to make certain that something will happen properly",
+    "createdAt": "06:36:38"
+  }
+      </code></pre>
+    </div>
+
+    <h2>DELETE method</h2>
+    <div class="comment">To delete the specified data</div>
+    <div class="url">
+      <div>* Request URL : http://localhost:3000/api/list</div>
+      <div>* Body Json Data :</div>
+    </div>
+    <div class="code">
+      <pre><code>
+  {
+    "english": "ensure"
+  }
+    </code></pre>
+    </div>
+    <div class="url">
+      <div>* Response Data :</div>
+    </div>
+    <div class="code">
+      <pre><code>
+    1
+        </code></pre>
+    </div>
+
+    <h2>PATCH method</h2>
+    <div class="comment">To update a data</div>
+    <div class="url">
+      <div>* Request URL : http://localhost:3000/api/list</div>
+      <div>* Body Json Data :</div>
+    </div>
+    <div class="code">
+      <pre><code>
+  {
+    "english": "ensure",
+    "japanese": "確保する, 保証する",
+    "sentence": "He took daily vitamins to ensure that he would remain healthy",
+    "memo": "to make certain that something will happen properly"
+  }
+    </code></pre>
+    </div>
+    <div class="url">
+      <div>* Response Data :</div>
+    </div>
+    <div class="code">
+      <pre><code>
+  No body returned for response
+        </code></pre>
+    </div>
+  </body>
+</html>
