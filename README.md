@@ -2,6 +2,8 @@
 
 # Word Book 🗒️
 
+![image](https://github.com/nouvelle/wordbook/blob/master/images/2_main-page.png?raw=true)
+
 1. [About](#About)
 1. [Environment](#Environment)
 1. [Installation](#Installation)
@@ -64,12 +66,6 @@ $ yarn migrate
 $ yarn start
 ```
 
-6. Open the app in web browser
-
-```
-http://localhost:3000/
-```
-
 # Other command
 
 - To roll back migrations
@@ -92,32 +88,24 @@ $ yarn seed
 
 # How To Use API
 
-API URL : `http://localhost:3000/api/list`  
-Explain URL : `http://localhost:3000/about.html`
+Explain URL : `/explain_api_url.html`
 
-## GET
+![aboutPage](https://github.com/nouvelle/wordbook/blob/master/images/4_API-page.png?raw=true)
 
-To get your data
+- `GET /api/list`
 
-![get](https://github.com/nouvelle/wordbook/blob/master/images/get.png?raw=true)
+  - To get your data
 
-## POST
+- `POST /api/list`
 
-To add your data
+  - To add your data
 
-![post](https://github.com/nouvelle/wordbook/blob/master/images/post.png?raw=true)
+- `DELETE /api/list`
 
-## DELET
+  - To delete your data
 
-To delete your data
-
-![delete](https://github.com/nouvelle/wordbook/blob/master/images/delete.png?raw=true)
-
-## PATCH
-
-To update your data
-
-![patch](https://github.com/nouvelle/wordbook/blob/master/images/patch.png?raw=true)
+- `PATCH /api/list`
+  - To update your data
 
 # Credits
 
@@ -133,3 +121,5 @@ Pull requests are welcome!! 😊
 # License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+![topPage](https://github.com/nouvelle/wordbook/blob/master/images/1_top-page.png?raw=true)
